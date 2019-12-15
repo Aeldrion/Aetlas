@@ -1,0 +1,11 @@
+{
+	"values": [
+		"#aetlas:ignore",
+		"minecraft:water",
+		"minecraft:lava",
+		"minecraft:tall_seagrass",
+		"minecraft:kelp_plant",
+		"minecraft:seagrass",
+		"minecraft:sea_pickle"
+	]
+}

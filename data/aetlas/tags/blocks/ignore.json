@@ -1,0 +1,21 @@
+{
+	"values": [
+		"#minecraft:flowers",
+		"#minecraft:saplings",
+		"minecraft:cactus",
+		"minecraft:grass",
+		"minecraft:fern",
+		"minecraft:dead_bush",
+		"minecraft:tall_grass",
+		"minecraft:large_fern",
+		"minecraft:air",
+		"minecraft:cave_air",
+		"minecraft:red_mushroom",
+		"minecraft:brown_mushroom",
+		"minecraft:snow",
+		"minecraft:lily_pad",
+		"minecraft:leaves",
+		"minecraft:logs",
+		"minecraft:packed_ice"
+	]
+}

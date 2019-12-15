@@ -1,0 +1,6 @@
+# Author: Aeldrion
+# Version: Minecraft 1.15
+# Project: Aetlas
+
+execute unless data storage aetlas:private Function."datapack" run tellraw @a ["", {"text": "[Aetlas]", "color": "gold"}, {"text": " Generated "}, {"nbt": "Structure.\"name\"", "storage": "aetlas:private", "interpret": true}, {"text": " near "}, {"text": "[", "color": "green"}, {"score": {"name": "$aetlas.structure.x", "objective": "aetlas.var"}, "color": "green"}, {"text": ", "}, {"score": {"name": "$aetlas.structure.z", "objective": "aetlas.var"}, "color": "green"}, {"text": "]", "color": "green"}]
+execute if data storage aetlas:private Function."datapack" run tellraw @a ["", {"text": "[", "color": "gold"}, {"nbt": "Function.\"datapack\"", "storage": "aetlas:private", "interpret": "true"}, {"text": "]", "color": "gold"}, {"text": " Generated "}, {"nbt": "Structure.\"name\"", "storage": "aetlas:private", "interpret": true}, {"text": " near "}, {"text": "[", "color": "green"}, {"score": {"name": "$aetlas.structure.x", "objective": "aetlas.var"}, "color": "green"}, {"text": ", "}, {"score": {"name": "$aetlas.structure.z", "objective": "aetlas.var"}, "color": "green"}, {"text": "]", "color": "green"}]
