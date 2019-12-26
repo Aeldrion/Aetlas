@@ -2,6 +2,8 @@
 	"values": [
 		"#minecraft:flowers",
 		"#minecraft:saplings",
+		"#minecraft:leaves",
+		"#minecraft:logs",
 		"minecraft:cactus",
 		"minecraft:grass",
 		"minecraft:fern",
@@ -14,8 +16,6 @@
 		"minecraft:brown_mushroom",
 		"minecraft:snow",
 		"minecraft:lily_pad",
-		"minecraft:leaves",
-		"minecraft:logs",
 		"minecraft:packed_ice"
 	]
 }
