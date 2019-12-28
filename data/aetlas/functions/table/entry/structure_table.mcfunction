@@ -12,7 +12,7 @@ execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard pla
 data modify storage aetlas:traceback StructureTableName append from storage aetlas:traceback Entry[-1]."name"
 scoreboard players set $aetlas.name_matches aetlas.var 0
 
-data modify storage aetlas:private AllTables set from storage aetlas:input Tables
+data modify storage aetlas:private AllTables set from storage aetlas:tables
 execute store result score $aetlas.tables aetlas.var run data get storage aetlas:private AllTables
 function aetlas:table/entry/structure_table/lookup_name_of_all_tables
 data remove storage aetlas:private AllTables
