@@ -11,9 +11,9 @@ execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard pla
 
 # Only read pools whose conditions pass
 data modify storage aetlas:traceback Pool append from storage aetlas:traceback Pools[-1][0]
-data modify storage aetlas:traceback Conditions append value []
-data modify storage aetlas:traceback Conditions[-1] set from storage aetlas:traceback Pool[-1]."conditions"
-function aetlas:table/condition/evaluate_all_conditions
+scoreboard players set $aetlas.conditions_passed aetlas.var 1
+execute if data storage aetlas:traceback Pool[-1]."conditions" run data modify storage aetlas:traceback Conditions append from storage aetlas:traceback Pool[-1]."conditions"
+execute if data storage aetlas:traceback Pool[-1]."conditions" run function aetlas:table/condition/evaluate_all_conditions
 execute if score $aetlas.conditions_passed aetlas.var matches 1 run function aetlas:table/pool/read_pool
 data remove storage aetlas:traceback Conditions[-1]
 data remove storage aetlas:traceback Pool[-1]
