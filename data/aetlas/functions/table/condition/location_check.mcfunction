@@ -4,8 +4,9 @@
 
 scoreboard players set $aetlas.condition_passed aetlas.var 1
 
-data modify storage aetlas:private ConditionParameters set from storage aetlas:private Condition[-1]
-execute store result score $aetlas.location_has_offset aetlas.var unless data storage aetlas:private ConditionParameters.offsetX unless data storage aetlas:private ConditionParameters.offsetY unless data storage aetlas:private ConditionParameters.offsetZ
+data modify storage aetlas:private ConditionParameters set from storage aetlas:traceback Condition[-1]
+scoreboard players set $aetlas.location_has_offset aetlas.var 1
+execute unless data storage aetlas:private ConditionParameters.offsetX unless data storage aetlas:private ConditionParameters.offsetY unless data storage aetlas:private ConditionParameters.offsetZ run scoreboard players set $aetlas.location_has_offset aetlas.var 0
 
 execute if score $aetlas.location_has_offset aetlas.var matches 1 run summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["aetlas", "aetlas.location_check.offset"]}
 execute if score $aetlas.location_has_offset aetlas.var matches 1 as @e[type=minecraft:area_effect_cloud, tag=aetlas.location_check.offset, limit=1] run function aetlas:table/condition/location_check/apply_offset

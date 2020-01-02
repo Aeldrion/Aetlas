@@ -5,9 +5,9 @@
 # Get light predicate as a light level range
 scoreboard players set $aetlas.light_level.min aetlas.var 0
 scoreboard players set $aetlas.light_level.max aetlas.var 15
-execute unless data storage aetlas:private ConditionParameters."predicate"."light"."light"."min" unless data storage aetlas:private ConditionParameters."predicate"."light"."light"."max" store result score $aetlas.light_level.min aetlas.var store result score $aetlas.light_level.max aetlas.var run data get storage aetlas:private ConditionParameters."predicate"."light"."light"
-execute if data storage aetlas:private ConditionParameters."predicate"."light"."light"."min" store result score $aetlas.light_level.min aetlas.var run data get storage aetlas:private ConditionParameters."predicate"."light"."light"."min"
-execute if data storage aetlas:private ConditionParameters."predicate"."light"."light"."max" store result score $aetlas.light_level.max aetlas.var run data get storage aetlas:private ConditionParameters."predicate"."light"."light"."max"
+execute unless data storage aetlas:private ConditionParameters.predicate.light.light.max unless data storage aetlas:private ConditionParameters.predicate.light.light.max store result score $aetlas.light_level.min aetlas.var store result score $aetlas.light_level.max aetlas.var run data get storage aetlas:private ConditionParameters.predicate.light.light
+execute if data storage aetlas:private ConditionParameters.predicate.light.light.max store result score $aetlas.light_level.min aetlas.var run data get storage aetlas:private ConditionParameters.predicate.light.light.max
+execute if data storage aetlas:private ConditionParameters.predicate.light.light.max store result score $aetlas.light_level.max aetlas.var run data get storage aetlas:private ConditionParameters.predicate.light.light.max
 
 # Get actual light level
 scoreboard players set $aetlas.light_level aetlas.var 0

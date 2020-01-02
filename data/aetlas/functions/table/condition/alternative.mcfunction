@@ -4,14 +4,15 @@
 
 data modify storage aetlas:traceback Score append value 0
 execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard players get $aetlas.conditions aetlas.var
+data modify storage aetlas:traceback Score append value 0
+execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard players get $aetlas.conditions_passed aetlas.var
 
-data modify storage aetlas:traceback Condition append from storage aetlas:traceback Condition[-1]."terms"
-function aetlas:table/evaluate_condition
-data remove storage aetlas:traceback Condition[-1]
+data modify storage aetlas:traceback Conditions append from storage aetlas:traceback Condition[-1].terms
+execute store result score $aetlas.conditions aetlas.var run data get storage aetlas:traceback Conditions[-1]
+function aetlas:table/condition/evaluate_all_conditions_until_one_passes
+data remove storage aetlas:traceback Conditions[-1]
 
-data remove storage aetlas:traceback Condition[-1]."terms"[0]
-scoreboard players remove $aetlas.conditions aetlas.var 1
-execute if score $aetlas.conditions aetlas.var matches 1.. if score $aetlas.condition_passed aetlas.var matches 0 run function aetlas:table/condition/alternative
-
+execute store result score $aetlas.conditions_passed aetlas.var run data get storage aetlas:traceback Score[-1]
+data remove storage aetlas:traceback Score[-1]
 execute store result score $aetlas.conditions aetlas.var run data get storage aetlas:traceback Score[-1]
 data remove storage aetlas:traceback Score[-1]

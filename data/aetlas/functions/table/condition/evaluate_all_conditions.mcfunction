@@ -8,7 +8,7 @@ data modify storage aetlas:traceback Score append value 0
 execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard players get $aetlas.condition_passed aetlas.var
 
 data modify storage aetlas:traceback Condition append from storage aetlas:traceback Conditions[-1][0]
-function aetlas:table/evaluate_condition
+function aetlas:table/condition/evaluate_condition
 data remove storage aetlas:traceback Condition[-1]
 
 data remove storage aetlas:traceback Conditions[-1][0]

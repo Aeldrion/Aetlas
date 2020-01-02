@@ -12,11 +12,11 @@ execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard pla
 
 # Read the entry if its conditions pass, or if it has no conditions
 data modify storage aetlas:traceback Entry append from storage aetlas:traceback Entries[-1][0]
-data modify storage aetlas:traceback Conditions append value []
-data modify storage aetlas:traceback Conditions[-1] set from storage aetlas:traceback Entry[-1]."conditions"
-function aetlas:structures/conditions/evaluate_all_conditions
+scoreboard players set $aetlas.conditions_passed aetlas.var 1
+execute if data storage aetlas:traceback Entry[-1].conditions run data modify storage aetlas:traceback Conditions append from storage aetlas:traceback Entry[-1].conditions
+execute if data storage aetlas:traceback Entry[-1].conditions run function aetlas:table/condition/evaluate_all_conditions
 execute if score $aetlas.conditions_passed aetlas.var matches 1 run function aetlas:table/entry/read_entry
-data remove storage aetlas:traceback Conditions[-1]
+execute if data storage aetlas:traceback Entry[-1].conditions run data remove storage aetlas:traceback Conditions[-1]
 data remove storage aetlas:traceback Entry[-1]
 
 # Loop this function if conditions passed

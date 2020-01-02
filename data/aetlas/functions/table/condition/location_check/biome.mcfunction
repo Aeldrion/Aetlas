@@ -2,7 +2,7 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-execute store result score $aetlas.name_length aetlas.var run data get storage aetlas:private ConditionParameters."predicate"."biome"
+execute store result score $aetlas.name_length aetlas.var run data get storage aetlas:private ConditionParameters.predicate.biome
 
 execute if score $aetlas.condition_passed aetlas.var matches 1 if score $aetlas.name_length aetlas.var matches 5..7 run function aetlas:table/condition/location_check/biome/5_7
 execute if score $aetlas.condition_passed aetlas.var matches 1 if score $aetlas.name_length aetlas.var matches 8..10 run function aetlas:table/condition/location_check/biome/8_10

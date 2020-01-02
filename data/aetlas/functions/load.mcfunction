@@ -7,3 +7,5 @@ scoreboard objectives add aetlas.chunk.z dummy
 scoreboard objectives add aetlas.var dummy
 
 execute store result score $aetlas.seed aetlas.var run seed
+
+schedule function aetlas:main 1s

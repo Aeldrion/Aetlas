@@ -9,8 +9,8 @@
 
 # Add to the sum
 data modify storage aetlas:traceback Entry[-1] set from storage aetlas:traceback Entries[-1][0]
-execute unless data storage aetlas:traceback Entry[-1]."weight" run scoreboard players set $aetlas.weight aetlas.var 1
-execute if data storage aetlas:traceback Entry[-1]."weight" store result score $aetlas.weight aetlas.var run data get storage aetlas:traceback Entry[-1]."weight"
+execute unless data storage aetlas:traceback Entry[-1].weight run scoreboard players set $aetlas.weight aetlas.var 1
+execute if data storage aetlas:traceback Entry[-1].weight store result score $aetlas.weight aetlas.var run data get storage aetlas:traceback Entry[-1].weight
 scoreboard players operation $aetlas.weight_sum aetlas.var += $aetlas.weight aetlas.var
 data remove storage aetlas:traceback Entries[-1][0]
 

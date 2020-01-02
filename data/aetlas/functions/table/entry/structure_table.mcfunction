@@ -9,10 +9,10 @@ execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard pla
 
 # Comparing name of every table to the specified structure table name
 # AllTables does not need to be in aetlas:traceback because looking up the name of tables does not ultimately run this function
-data modify storage aetlas:traceback StructureTableName append from storage aetlas:traceback Entry[-1]."name"
+data modify storage aetlas:traceback StructureTableName append from storage aetlas:traceback Entry[-1].name
 scoreboard players set $aetlas.name_matches aetlas.var 0
 
-data modify storage aetlas:private AllTables set from storage aetlas:tables
+data modify storage aetlas:private AllTables set from storage aetlas:data Tables
 execute store result score $aetlas.tables aetlas.var run data get storage aetlas:private AllTables
 function aetlas:table/entry/structure_table/lookup_name_of_all_tables
 data remove storage aetlas:private AllTables

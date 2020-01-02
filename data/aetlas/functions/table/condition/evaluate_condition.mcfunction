@@ -6,7 +6,7 @@ data modify storage aetlas:traceback Score append value 0
 execute store result storage aetlas:traceback Score[-1] int 1 run scoreboard players get $aetlas.condition_id aetlas.var
 
 scoreboard players set $aetlas.condition_id aetlas.var 0
-data modify storage aetlas:private ConditionID set from storage aetlas:private Condition[-1]."condition"
+data modify storage aetlas:private ConditionID set from storage aetlas:traceback Condition[-1].condition
 
 execute if score $aetlas.condition_id aetlas.var matches 0 if data storage aetlas:private {"ConditionID": "minecraft:alternative"} run scoreboard players set $aetlas.condition_id aetlas.var 1
 execute if score $aetlas.condition_id aetlas.var matches 0 if data storage aetlas:private {"ConditionID": "minecraft:inverted"} run scoreboard players set $aetlas.condition_id aetlas.var 2

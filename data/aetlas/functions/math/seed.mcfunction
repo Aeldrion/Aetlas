@@ -2,16 +2,32 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-# Returns ax + bz + c
-# (x, z) are coordinates, (a, b) are two constants and c is the world seed
-scoreboard players set $aetlas.lcg.x_multiplier aetlas.var 1103515245
-scoreboard players operation $aetlas.lcg.x aetlas.var = @s aetlas.chunk.x
-scoreboard players operation $aetlas.lcg.x aetlas.var *= $aetlas.lcg.x_multiplier aetlas.var
+# Returns a seed for the LCG
+# Uses the Cantor pairing function with chunk coordinates
 
-scoreboard players set $aetlas.lcg.z_multiplier aetlas.var 22695477
-scoreboard players operation $aetlas.lcg.z aetlas.var = @s aetlas.chunk.z
-scoreboard players operation $aetlas.lcg.z aetlas.var *= $aetlas.lcg.z_multiplier aetlas.var
+scoreboard players set $aetlas.lcg.cantor.k1 aetlas.var 0
+execute if score $aetlas aetlas.chunk.x matches 0.. run scoreboard players operation $aetlas.lcg.cantor.k1 aetlas.var += $aetlas aetlas.chunk.x
+execute if score $aetlas aetlas.chunk.x matches 0.. run scoreboard players operation $aetlas.lcg.cantor.k1 aetlas.var += $aetlas aetlas.chunk.x
+execute if score $aetlas aetlas.chunk.x matches ..-1 run scoreboard players operation $aetlas.lcg.cantor.k1 aetlas.var -= $aetlas aetlas.chunk.x
+execute if score $aetlas aetlas.chunk.x matches ..-1 run scoreboard players operation $aetlas.lcg.cantor.k1 aetlas.var -= $aetlas aetlas.chunk.x
+execute if score $aetlas aetlas.chunk.x matches ..-1 run scoreboard players remove $aetlas.lcg.cantor.k1 aetlas.var 1
 
-scoreboard players operation $aetlas.lcg.var aetlas.var = $aetlas.lcg.x aetlas.var
-scoreboard players operation $aetlas.lcg.var aetlas.var += $aetlas.lcg.z aetlas.var
-scoreboard players operation $aetlas.lcg.var aetlas.var += $aetlas.seed aetlas.var
+scoreboard players set $aetlas.lcg.cantor.k2 aetlas.var 0
+execute if score $aetlas aetlas.chunk.z matches 0.. run scoreboard players operation $aetlas.lcg.cantor.k2 aetlas.var += $aetlas aetlas.chunk.z
+execute if score $aetlas aetlas.chunk.z matches 0.. run scoreboard players operation $aetlas.lcg.cantor.k2 aetlas.var += $aetlas aetlas.chunk.z
+execute if score $aetlas aetlas.chunk.z matches ..-1 run scoreboard players operation $aetlas.lcg.cantor.k2 aetlas.var -= $aetlas aetlas.chunk.z
+execute if score $aetlas aetlas.chunk.z matches ..-1 run scoreboard players operation $aetlas.lcg.cantor.k2 aetlas.var -= $aetlas aetlas.chunk.z
+execute if score $aetlas aetlas.chunk.z matches ..-1 run scoreboard players remove $aetlas.lcg.cantor.k2 aetlas.var 1
+
+scoreboard players operation $aetlas.lcg.cantor.k1+k2 aetlas.var = $aetlas.lcg.cantor.k1 aetlas.var
+scoreboard players operation $aetlas.lcg.cantor.k1+k2 aetlas.var += $aetlas.lcg.cantor.k2 aetlas.var
+scoreboard players operation $aetlas.lcg.cantor.k1+k2+1 aetlas.var = $aetlas.lcg.cantor.k1+k2 aetlas.var
+scoreboard players add $aetlas.lcg.cantor.k1+k2+1 aetlas.var 1
+
+scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var = $aetlas.lcg.cantor.k1+k2 aetlas.var
+scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var *= $aetlas.lcg.cantor.k1+k2+1 aetlas.var
+scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var /= $2 aetlas.var
+scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var += $aetlas.lcg.cantor.k2 aetlas.var
+
+scoreboard players operation $aetlas.lcg.seed aetlas.var = $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var
+scoreboard players operation $aetlas.lcg.seed aetlas.var += $aetlas.seed aetlas.var

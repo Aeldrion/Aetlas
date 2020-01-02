@@ -2,4 +2,8 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-execute at @a positioned ~ 0 ~ run function aetlas:chunk_scan/player_loop
+function aetlas:benchmark/start
+function aetlas:chunk_scan/loop
+function aetlas:benchmark/end
+
+schedule function aetlas:main 1s
