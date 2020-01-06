@@ -24,6 +24,7 @@ scoreboard players operation $aetlas.lcg.cantor.k1+k2 aetlas.var += $aetlas.lcg.
 scoreboard players operation $aetlas.lcg.cantor.k1+k2+1 aetlas.var = $aetlas.lcg.cantor.k1+k2 aetlas.var
 scoreboard players add $aetlas.lcg.cantor.k1+k2+1 aetlas.var 1
 
+scoreboard players set $2 aetlas.var 2
 scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var = $aetlas.lcg.cantor.k1+k2 aetlas.var
 scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var *= $aetlas.lcg.cantor.k1+k2+1 aetlas.var
 scoreboard players operation $aetlas.lcg.cantor.(k1+k2)(k1+k2+1)/2+k2 aetlas.var /= $2 aetlas.var

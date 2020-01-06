@@ -1,0 +1,50 @@
+{
+	// You can add pools in #load if no pool of the same name is found: execute unless data storage aetlas:root_table pools[{name: "mypack"}] run data modify storage aetlas:root_table pools append {name: "mypack", ...}
+	// You can use JSON directly in the command to add the pool as it is also a valid NBT compound
+	"pools": [
+		{
+			// Ideally every pool in the root structure table should contain a single entry with a direct reference to a structure table for a pack
+			"name": "mypack",
+			"rolls": 1,
+			"entries": [
+				{
+					// This links to a table in the aetlas:data Tables storage list with "name": "mypack" (see tables.json)
+					"type": "aetlas:structure_table",
+					"name": "mypack"
+				}
+			]
+		},
+		{
+			// It is however possible to have conditions, functions and different entry types in the root structure table
+			"name": "otherpack",
+			"rolls": 1,
+			"entries": [
+				{
+					// It is recommended to namespace your tables (eg otherpack:overworld instead of just overworld) to avoid conflicts
+					"type": "aetlas:structure_table",
+					"name": "otherpack:overworld",
+					"conditions": [
+						{
+							"condition": "aetlas:location_check",
+							"predicate": {
+								"dimension": "overworld"
+							}
+						}
+					]
+				},
+				{
+					"type": "aetlas:structure_table",
+					"name": "otherpack:nether",
+					"conditions": [
+						{
+							"condition": "aetlas:location_check",
+							"predicate": {
+								"dimension": "the_nether"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

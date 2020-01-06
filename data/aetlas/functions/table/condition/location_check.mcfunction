@@ -4,7 +4,7 @@
 
 scoreboard players set $aetlas.condition_passed aetlas.var 1
 
-data modify storage aetlas:private ConditionParameters set from storage aetlas:traceback Condition[-1]
+data modify storage aetlas:private ConditionParameters set from storage aetlas:stack Condition[-1]
 scoreboard players set $aetlas.location_has_offset aetlas.var 1
 execute unless data storage aetlas:private ConditionParameters.offsetX unless data storage aetlas:private ConditionParameters.offsetY unless data storage aetlas:private ConditionParameters.offsetZ run scoreboard players set $aetlas.location_has_offset aetlas.var 0
 

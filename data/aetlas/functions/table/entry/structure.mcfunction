@@ -2,7 +2,7 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-data modify storage aetlas:private Structure set from storage aetlas:traceback Entry[-1]
+data modify storage aetlas:private Structure set from storage aetlas:stack Entry[-1]
 data modify storage aetlas:private StructureBlockData.name set from storage aetlas:private Structure.name
 
 # Read structure size

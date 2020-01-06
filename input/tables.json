@@ -1,0 +1,73 @@
+[
+	{
+		// You can call this structure table with a structure_table entry with the name "mypack". Caution, cyclic references are unsupported and will break the command limit, which will cause unexpected behavior.
+		// Having a name means you can check for the existence of this pool before adding it, so that it is only added once (see header in root.json)
+		"name": "mypack",
+		"pools": [
+			{
+				// You can define a fixed or a random number of dice rolls within the pool.
+				"rolls": {
+					"min": 1,
+					"max": 2
+				},
+				"entries": [
+					{
+						// Defining the x/y/z size is necessary for some functions to work as intended (eg random_rotation).
+						"type": "aetlas:structure",
+						"name": "mypack:volcano",
+						"size": {
+							"x": 16,
+							"y": 8,
+							"z": 14
+						},
+						"conditions": [
+							{
+								// For conditions, functions and entry types, you can use the aetlas namespace, the minecraft namespace or no namespace.
+								// Location checks work the same way as vanilla predicates, except they do not support block/fluid checks.
+								"condition": "aetlas:location_check",
+								"predicate": {
+									"biome": "plains"
+								}
+							},
+							{
+								// Conditions can be references to a condition in the aetlas:data Conditions storage list (see conditions.json).
+								// Unlike loot tables, this does not correspond to a saved predicate file in a data pack.
+								"condition": "aetlas:reference",
+								"name": "mypack:clear_overworld"
+							}
+						],
+						"functions": [
+							{
+								"function": "aetlas:random_rotation"
+							},
+							{
+								// Likewise, functions can be references to a function in the aetlas:data Functions storage list (see functions.json).
+								// This feature has no loot table equivalent.
+								"function": "aetlas:reference",
+								"name": "mypack:volcano_config"
+							}
+						]
+					},
+					{
+						// Entries can also be references to a structure in the Structures list (see structures.json).
+						// This is useful when you don't want to copy size, functions and conditions for a structure multiple times in a table.
+						"entry": "aetlas:structure_reference",
+						"name": "mypack:dungeon"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "otherpack:overworld",
+		"pools": [
+			// ...
+		]
+	},
+	{
+		"name": "otherpack:nether",
+		"pools": [
+			// ...
+		]
+	}
+]
