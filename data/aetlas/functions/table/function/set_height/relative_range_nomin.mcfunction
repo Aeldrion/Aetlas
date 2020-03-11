@@ -6,5 +6,5 @@ execute store result score $aetlas.random.max aetlas.var run data get storage ae
 scoreboard players add $aetlas.random.max aetlas.var 1
 function aetlas:math/random
 function aetlas:structures/get_surface_height
-scoreboard players operation $aetlas.aec_pos.y aetlas.var = $aetlas.pos.y aetlas.var
-scoreboard players operation $aetlas.aec_pos.y aetlas.var += $aetlas.random aetlas.var
+scoreboard players operation $aetlas.pos.y aetlas.var = $aetlas.surface_height aetlas.var
+scoreboard players operation $aetlas.pos.y aetlas.var += $aetlas.random aetlas.var

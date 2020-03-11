@@ -2,4 +2,4 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-data modify storage aetlas:private StructureBlockData.rotation set from storage aetlas:private Function."rotation"
+data modify storage aetlas:private StructureBlockData.rotation set from storage aetlas:private Function.rotation

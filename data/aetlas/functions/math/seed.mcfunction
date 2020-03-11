@@ -2,8 +2,8 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-# Returns a seed for the LCG
-# Uses the Cantor pairing function with chunk coordinates
+# Returns a seed for the LCG based on position
+# Uses the Cantor pairing function with chunk coordinates, and adds the world seed
 
 scoreboard players set $aetlas.lcg.cantor.k1 aetlas.var 0
 execute if score $aetlas aetlas.chunk.x matches 0.. run scoreboard players operation $aetlas.lcg.cantor.k1 aetlas.var += $aetlas aetlas.chunk.x

@@ -1,0 +1,391 @@
+{
+	"condition": "minecraft:inverted",
+	"term": {
+		"condition": "minecraft:alternative",
+		"terms": [
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -31
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -30
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -29
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -28
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -27
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -26
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -25
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -24
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -23
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -22
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -21
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -20
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -19
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -18
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -17
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -16
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -15
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -14
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -13
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -12
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -11
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -10
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -9
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -8
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -7
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -6
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -5
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -4
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -3
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -2
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					},
+					"offsetY": -1
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore"
+						}
+					}
+				}
+			}
+		]
+	}
+}

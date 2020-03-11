@@ -1,0 +1,55 @@
+{
+	"condition": "minecraft:inverted",
+	"term": {
+		"condition": "minecraft:alternative",
+		"terms": [
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore_with_fluids"
+						}
+					},
+					"offsetY": -3
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore_with_fluids"
+						}
+					},
+					"offsetY": -2
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore_with_fluids"
+						}
+					},
+					"offsetY": -1
+				}
+			},
+			{
+				"condition": "minecraft:inverted",
+				"term": {
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"tag": "aetlas:ignore_with_fluids"
+						}
+					}
+				}
+			}
+		]
+	}
+}

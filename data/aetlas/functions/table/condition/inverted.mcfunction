@@ -2,7 +2,7 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-data modify storage aetlas:stack Condition append from storage aetlas:stack Condition[-1]."term"
+data modify storage aetlas:stack Condition append from storage aetlas:stack Condition[-1].term
 function aetlas:table/evaluate_condition
 data remove storage aetlas:stack Condition[-1]
 

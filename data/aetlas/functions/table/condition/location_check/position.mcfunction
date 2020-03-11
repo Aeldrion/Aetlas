@@ -5,6 +5,7 @@
 # Get current position
 execute align xyz run summon minecraft:area_effect_cloud ~ ~ ~ {Tags: ["aetlas", "aetlas.location_check.position"]}
 data modify storage aetlas:private Pos set from entity @e[type=minecraft:area_effect_cloud, tag=aetlas.location_check.position, limit=1] Pos
+kill @e[type=minecraft:area_effect_cloud, tag=aetlas.location_check.position, limit=1]
 execute store result score $aetlas.pos.x aetlas.var run data get storage aetlas:private Pos[0]
 execute store result score $aetlas.pos.y aetlas.var run data get storage aetlas:private Pos[1]
 execute store result score $aetlas.pos.z aetlas.var run data get storage aetlas:private Pos[2]

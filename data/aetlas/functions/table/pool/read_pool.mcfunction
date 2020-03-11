@@ -2,9 +2,8 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
-# Runs entries in a pool
-# Number of entries is determined by rolls
-# Entries can be weighted
+# Reads a pool and runs its entries if conditions pass
+# Number of entries is determined by rolls and entries can be weighted
 
 data modify storage aetlas:stack Score append value 0
 execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $aetlas.rolls aetlas.var

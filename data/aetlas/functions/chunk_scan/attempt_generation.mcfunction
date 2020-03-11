@@ -2,6 +2,8 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
+# Parses the global structure table to attempt to generate structures in the current chunk
+
 function aetlas:math/seed
 
 data modify storage aetlas:stack Table append from storage aetlas:root_table

@@ -8,5 +8,3 @@ execute store result score $aetlas.random_chance aetlas.var run data get storage
 scoreboard players set $aetlas.random.max aetlas.var 1000000
 function aetlas:math/random
 execute store success score $aetlas.condition_passed aetlas.var if score $aetlas.random aetlas.var < $aetlas.random_chance aetlas.var
-
-execute if data storage aetlas:private {ConditionParameters: {chance: 0.01d}} if score $aetlas.condition_passed aetlas.var matches 1 run tellraw @a {"score": {"name": "$aetlas.random", "objective": "aetlas.var"}}

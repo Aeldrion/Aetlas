@@ -2,6 +2,9 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
+# Handles the chunk scan algorithm
+# Runs as many times as possibme without exceeding 0.1s of execution time, unless the entire nearby terrain has already been populated
+
 execute at @a positioned ~ 0 ~ run function aetlas:chunk_scan/player_loop
 
 execute store result score $aetlas.benchmark.duration aetlas.var run worldborder get

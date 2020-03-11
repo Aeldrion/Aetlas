@@ -14,7 +14,7 @@ data modify storage aetlas:private Function set from storage aetlas:private Func
 scoreboard players set $aetlas.conditions_passed aetlas.var 1
 execute if data storage aetlas:private Function.conditions run data modify storage aetlas:stack Conditions append from storage aetlas:private Function.conditions
 execute if data storage aetlas:private Function.conditions store result score $aetlas.conditions aetlas.var run data get storage aetlas:stack Conditions[-1]
-execute if data storage aetlas:private Function.conditions run function aetlas:table/condition/evaluate_all_conditions
+execute if data storage aetlas:private Function.conditions if score $aetlas.conditions aetlas.var matches 1.. run function aetlas:table/condition/evaluate_all_conditions
 execute if score $aetlas.conditions_passed aetlas.var matches 1 run function aetlas:table/function/read_function
 execute if data storage aetlas:private Function.conditions run data remove storage aetlas:stack Conditions[-1]
 data remove storage aetlas:private Function

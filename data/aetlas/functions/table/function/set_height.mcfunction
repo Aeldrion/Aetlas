@@ -2,6 +2,8 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
+# Returns height to $aetlas.pos.y
+
 execute if data storage aetlas:private {Function: {ignore_fluids: 1b}} run data modify storage aetlas:private IgnoreFluids set value 1b
 
 execute unless data storage aetlas:private {Function: {above_ground: 1b}} if data storage aetlas:private Function.height unless data storage aetlas:private Function.height.max unless data storage aetlas:private Function.height.max run function aetlas:table/function/set_height/absolute_fixed

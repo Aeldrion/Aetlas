@@ -4,15 +4,15 @@
 
 # Get current position (ignore pos.y if it was changed by a set_height function)
 data modify storage aetlas:private Pos set from entity @s Pos
-execute store result score $aetlas.aec_pos.x aetlas.var run data get storage aetlas:private Pos[0]
-execute if score $aetlas.aec_pos.y aetlas.var matches -1 store result score $aetlas.aec_pos.y aetlas.var run data get storage aetlas:private Pos[1]
-execute store result score $aetlas.aec_pos.z aetlas.var run data get storage aetlas:private Pos[2]
+execute store result score $aetlas.pos.x aetlas.var run data get storage aetlas:private Pos[0]
+execute if score $aetlas.pos.y aetlas.var matches -1 store result score $aetlas.pos.y aetlas.var run data get storage aetlas:private Pos[1]
+execute store result score $aetlas.pos.z aetlas.var run data get storage aetlas:private Pos[2]
 data remove storage aetlas:private Pos
 
 # Apply positional offset (if any)
-execute store result entity @s Pos[0] double 1 run scoreboard players operation $aetlas.aec_pos.x aetlas.var += $aetlas.pos.dx aetlas.var
-execute store result entity @s Pos[1] double 1 run scoreboard players operation $aetlas.aec_pos.y aetlas.var += $aetlas.pos.dy aetlas.var
-execute store result entity @s Pos[2] double 1 run scoreboard players operation $aetlas.aec_pos.z aetlas.var += $aetlas.pos.dz aetlas.var
+execute store result entity @s Pos[0] double 1 run scoreboard players operation $aetlas.pos.x aetlas.var += $aetlas.pos.dx aetlas.var
+execute store result entity @s Pos[1] double 1 run scoreboard players operation $aetlas.pos.y aetlas.var += $aetlas.pos.dy aetlas.var
+execute store result entity @s Pos[2] double 1 run scoreboard players operation $aetlas.pos.z aetlas.var += $aetlas.pos.dz aetlas.var
 
 # Load chunk (if it is not loaded)
 execute positioned as @s store result score $aetlas.chunk_loaded aetlas.var if blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ all
