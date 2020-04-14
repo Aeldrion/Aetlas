@@ -13,9 +13,9 @@ execute if score $aetlas.surface_height.offset aetlas.var matches 0 if predicate
 
 scoreboard players operation $aetlas.surface_height aetlas.var -= $aetlas.surface_height.offset aetlas.var
 
-execute if score $aetlas.surface_height.offset aetlas.var matches 2 positioned ~ ~-2 ~ run function aetlas:structures/surface_height/overworld_with_fluids_as_solid
-execute if score $aetlas.surface_height.offset aetlas.var matches 4 positioned ~ ~-4 ~ run function aetlas:structures/surface_height/overworld_with_fluids_as_solid
-execute if score $aetlas.surface_height.offset aetlas.var matches 8 positioned ~ ~-8 ~ run function aetlas:structures/surface_height/overworld_with_fluids_as_solid
-execute if score $aetlas.surface_height.offset aetlas.var matches 16 positioned ~ ~-16 ~ run function aetlas:structures/surface_height/overworld_with_fluids_as_solid
-execute if score $aetlas.surface_height.offset aetlas.var matches 32 positioned ~ ~-32 ~ run function aetlas:structures/surface_height/overworld_with_fluids_as_solid
-execute if score $aetlas.surface_height.offset aetlas.var matches 64 positioned ~ ~-64 ~ run function aetlas:structures/surface_height/overworld_with_fluids_as_solid
+execute if score $aetlas.surface_height.offset aetlas.var matches 2 positioned ~ ~-2 ~ run function aetlas:height/overworld_with_fluids_as_solid
+execute if score $aetlas.surface_height.offset aetlas.var matches 4 positioned ~ ~-4 ~ run function aetlas:height/overworld_with_fluids_as_solid
+execute if score $aetlas.surface_height.offset aetlas.var matches 8 positioned ~ ~-8 ~ run function aetlas:height/overworld_with_fluids_as_solid
+execute if score $aetlas.surface_height.offset aetlas.var matches 16 positioned ~ ~-16 ~ run function aetlas:height/overworld_with_fluids_as_solid
+execute if score $aetlas.surface_height.offset aetlas.var matches 32 positioned ~ ~-32 ~ run function aetlas:height/overworld_with_fluids_as_solid
+execute if score $aetlas.surface_height.offset aetlas.var matches 64 positioned ~ ~-64 ~ run function aetlas:height/overworld_with_fluids_as_solid

@@ -2,6 +2,7 @@
 # Version: Minecraft 1.15
 # Project: Aetlas
 
+execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "crimson_forest"}}} unless predicate aetlas:biome/crimson_forest run scoreboard players set $aetlas.condition_passed aetlas.var 0
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "lukewarm_ocean"}}} unless predicate aetlas:biome/lukewarm_ocean run scoreboard players set $aetlas.condition_passed aetlas.var 0
 
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "deep_cold_ocean"}}} unless predicate aetlas:biome/deep_cold_ocean run scoreboard players set $aetlas.condition_passed aetlas.var 0
@@ -15,6 +16,7 @@ execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage a
 
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "badlands_plateau"}}} unless predicate aetlas:biome/badlands_plateau run scoreboard players set $aetlas.condition_passed aetlas.var 0
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "giant_tree_taiga"}}} unless predicate aetlas:biome/giant_tree_taiga run scoreboard players set $aetlas.condition_passed aetlas.var 0
+execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "soul_sand_valley"}}} unless predicate aetlas:biome/soul_sand_valley run scoreboard players set $aetlas.condition_passed aetlas.var 0
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "sunflower_plains"}}} unless predicate aetlas:biome/sunflower_plains run scoreboard players set $aetlas.condition_passed aetlas.var 0
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "tall_birch_hills"}}} unless predicate aetlas:biome/tall_birch_hills run scoreboard players set $aetlas.condition_passed aetlas.var 0
 execute if score $aetlas.condition_passed aetlas.var matches 1 if data storage aetlas:private {ConditionParameters: {predicate: {biome: "wooded_mountains"}}} unless predicate aetlas:biome/wooded_mountains run scoreboard players set $aetlas.condition_passed aetlas.var 0

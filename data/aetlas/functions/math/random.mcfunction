@@ -5,10 +5,6 @@
 # Generates a random number between 0 (included) and $aetlas.random.max (excluded)
 # Determined by previous seed: starting with the same seed, repeated iterations of this function will always yield the same sequence of results
 
-scoreboard players set $aetlas.lcg.multiplier aetlas.var 1630111353
-scoreboard players set $aetlas.lcg.increment aetlas.var 1623164762
-scoreboard players set $aetlas.lcg.modulus aetlas.var 2147483647
-
 scoreboard players operation $aetlas.lcg.seed aetlas.var *= $aetlas.lcg.multiplier aetlas.var
 scoreboard players operation $aetlas.lcg.seed aetlas.var += $aetlas.lcg.increment aetlas.var
 scoreboard players operation $aetlas.lcg.seed aetlas.var %= $aetlas.lcg.modulus aetlas.var
