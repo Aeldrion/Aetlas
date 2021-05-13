@@ -15,6 +15,7 @@ execute positioned as @s store result score $chunk_loaded aetlas if blocks ~ ~ ~
 execute if score $chunk_loaded aetlas matches 0 positioned as @s run forceload add ~ ~
 
 # Clone blocks before placing structure block and redstone block
+forceload add -30000000 7760
 execute positioned as @s run clone ~ ~ ~ ~ ~1 ~ -30000000 1 7760
 execute positioned as @s run setblock ~ ~ ~ minecraft:structure_block{mode:"LOAD"}
 execute positioned as @s run data modify block ~ ~ ~ {} merge from storage aetlas:private StructureBlockData
