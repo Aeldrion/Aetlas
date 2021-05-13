@@ -1,7 +1,3 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
 # Teleports the executing entity to the corner of the chunk it is in (min x, min z)
 
 data modify storage aetlas:private Pos set from entity @s Pos

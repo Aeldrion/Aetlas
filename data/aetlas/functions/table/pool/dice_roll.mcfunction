@@ -1,29 +1,25 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
 # Runs a random entry in the Entries list
 # Conditions are ignored, assuming they already pass because of filter_entries
 
 data modify storage aetlas:stack Score append value 0
-execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $aetlas.weight_index aetlas.var
+execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $weight_index aetlas
 data modify storage aetlas:stack Score append value 0
-execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $aetlas.weight_sum aetlas.var
+execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $weight_sum aetlas
 
 # Set a random weight index
-scoreboard players operation $aetlas.random.max aetlas.var = $aetlas.total_weight aetlas.var
+scoreboard players operation $random.max aetlas = $total_weight aetlas
 function aetlas:math/random
-scoreboard players operation $aetlas.weight_index aetlas.var = $aetlas.random aetlas.var
+scoreboard players operation $weight_index aetlas = $random aetlas
 
 # Run the entry at this weight index
 data modify storage aetlas:stack Entry append value {}
-scoreboard players set $aetlas.weight_sum aetlas.var 0
+scoreboard players set $weight_sum aetlas 0
 function aetlas:table/pool/get_entry_at_weight_index
 function aetlas:table/entry/read_entry
-scoreboard players remove $aetlas.rolls aetlas.var 1
+scoreboard players remove $rolls aetlas 1
 data remove storage aetlas:stack Entry[-1]
 
-execute store result score $aetlas.weight_sum aetlas.var run data get storage aetlas:stack Score[-1]
+execute store result score $weight_sum aetlas run data get storage aetlas:stack Score[-1]
 data remove storage aetlas:stack Score[-1]
-execute store result score $aetlas.weight_index aetlas.var run data get storage aetlas:stack Score[-1]
+execute store result score $weight_index aetlas run data get storage aetlas:stack Score[-1]
 data remove storage aetlas:stack Score[-1]

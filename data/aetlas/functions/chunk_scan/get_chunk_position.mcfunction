@@ -1,7 +1,3 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
 # Executed as a chunk marker, saves the coordinates of the current chunk
 
 data modify storage aetlas:private Pos set from entity @s Pos

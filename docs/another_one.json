@@ -1,0 +1,78 @@
+{
+	"name": "aetlas:main",
+	"pools": [{
+		"rolls": {
+			"min": 0,
+			"max": 1
+		},
+		"entries": [{
+				"entry": "aetlas:structure_table",
+				"name": "mypack:ruins",
+				"weight": 2
+			},
+			{
+				"entry": "aetlas:empty",
+				"conditions": [{
+					"condition": "aetlas:random_chance",
+					"chance": 0.4
+				}, {
+					"condition": "aetlas:inverted",
+					"term": {
+						"condition": "aetlas:weather_check",
+						"raining": true
+					}
+				}]
+			}, {
+				"entry": "aetlas:structure",
+				"name": "mypack:oasis",
+				"size": {
+					"x": 16,
+					"y": 11,
+					"z": 17
+				},
+				"conditions": [{
+					"condition": "aetlas:location_check",
+					"biome": "minecraft:desert"
+				}],
+				"functions": [{
+					"function": "aetlas:set_height",
+					"height": 0,
+					"above_ground": true
+				}, {
+					"function": "aetlas:random_mirror",
+					"conditions": [{
+						"condition": "aetlas:random_chance",
+						"chance": 0.5
+					}]
+				}, {
+					"function": "aetlas:random_rotation"
+				}, {
+					"function": "aetlas:disable_entities"
+				}]
+			}, {
+				"entry": "aetlas:reference",
+				"name": "mypack:ruins",
+				"functions": [{
+					"function": "aetlas:set_integrity",
+					"integrity": {
+						"min": 0.4,
+						"max": 0.8
+					}
+				}]
+			}
+		],
+		"conditions": [{
+			"condition": "aetlas:location_check",
+			"predicate": {
+				"dimension": "minecraft:overworld"
+			}
+		}]
+	}]
+}
+
+A main structure table is ran at every chunk in every dimension
+Data packs can add pools to this loot table (with a name so that it doesn't add the same pool twice)
+A pool can have conditions (mostly minecraft loot table conditions), rolls (min-max or a fixed value) and entries (supports weights and stuff)
+Entries can be a structure, with functions to set things like integrity or randomise some stuff that should be randomised, or to set height (fixed or relative to the ground)
+			or a structure table reference, which links to another loot table in a list somewhere (with a name)
+			or a structure reference, which links to a structure entry in a list somewhere (with a name) which is much more convenient in some cases

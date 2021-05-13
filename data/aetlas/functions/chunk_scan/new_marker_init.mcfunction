@@ -1,7 +1,3 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
 # Executed as and at a chunk marker
 # Notifies data packs who care and attempts structure generation
 

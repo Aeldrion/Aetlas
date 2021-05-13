@@ -1,14 +1,10 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
-execute if score $aetlas.function_id aetlas.var matches 1 run function aetlas:table/function/announce_in_chat
-execute if score $aetlas.function_id aetlas.var matches 2 run function aetlas:table/function/block_filters
-execute if score $aetlas.function_id aetlas.var matches 3 run function aetlas:table/function/disable_entities
-execute if score $aetlas.function_id aetlas.var matches 4 run function aetlas:table/function/offset_position
-execute if score $aetlas.function_id aetlas.var matches 5 run function aetlas:table/function/random_mirror
-execute if score $aetlas.function_id aetlas.var matches 6 run function aetlas:table/function/random_rotation
-execute if score $aetlas.function_id aetlas.var matches 7 run function aetlas:table/function/set_height
-execute if score $aetlas.function_id aetlas.var matches 8 run function aetlas:table/function/set_integrity
-execute if score $aetlas.function_id aetlas.var matches 9 run function aetlas:table/function/set_mirror
-execute if score $aetlas.function_id aetlas.var matches 10 run function aetlas:table/function/set_rotation
+execute if score $function_id aetlas matches 1 run function aetlas:table/function/announce_in_chat
+execute if score $function_id aetlas matches 2 run function aetlas:table/function/block_filters
+execute if score $function_id aetlas matches 3 run function aetlas:table/function/disable_entities
+execute if score $function_id aetlas matches 4 run function aetlas:table/function/offset_position
+execute if score $function_id aetlas matches 5 run function aetlas:table/function/random_mirror
+execute if score $function_id aetlas matches 6 run function aetlas:table/function/random_rotation
+execute if score $function_id aetlas matches 7 run function aetlas:table/function/set_height
+execute if score $function_id aetlas matches 8 run function aetlas:table/function/set_integrity
+execute if score $function_id aetlas matches 9 run function aetlas:table/function/set_mirror
+execute if score $function_id aetlas matches 10 run function aetlas:table/function/set_rotation

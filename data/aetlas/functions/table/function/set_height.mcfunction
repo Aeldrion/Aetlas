@@ -1,8 +1,4 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
-# Returns height to $aetlas.pos.y
+# Returns height to $pos.y
 
 execute if data storage aetlas:private {Function: {ignore_fluids: 1b}} run data modify storage aetlas:private IgnoreFluids set value 1b
 

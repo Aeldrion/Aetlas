@@ -1,13 +1,9 @@
-# Author: Aeldrion
-# Version: Minecraft 1.15
-# Project: Aetlas
-
-# Returns $aetlas.total_weight which is the sum of weights of all entries in the Entries list
-# $aetlas.total_weight must be set to 0 beforehand
-# Number of entries has to be stored to $aetlas.entries beforehand
+# Returns $total_weight which is the sum of weights of all entries in the Entries list
+# $total_weight must be set to 0 beforehand
+# Number of entries has to be stored to $entries beforehand
 
 data modify storage aetlas:stack Score append value 0
-execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $aetlas.weight aetlas.var
+execute store result storage aetlas:stack Score[-1] int 1 run scoreboard players get $weight aetlas
 
 # Get entry's weight
 data modify storage aetlas:stack Entry append from storage aetlas:stack Entries[-1][0]
@@ -16,9 +12,9 @@ data remove storage aetlas:stack Entry[-1]
 
 # Loop this function
 data remove storage aetlas:stack Entries[-1][0]
-scoreboard players operation $aetlas.total_weight aetlas.var += $aetlas.weight aetlas.var
-scoreboard players remove $aetlas.entries aetlas.var 1
-execute if score $aetlas.entries aetlas.var matches 1.. run function aetlas:table/pool/determine_total_weight
+scoreboard players operation $total_weight aetlas += $weight aetlas
+scoreboard players remove $entries aetlas 1
+execute if score $entries aetlas matches 1.. run function aetlas:table/pool/determine_total_weight
 
-execute store result score $aetlas.weight aetlas.var run data get storage aetlas:stack Score[-1]
+execute store result score $weight aetlas run data get storage aetlas:stack Score[-1]
 data remove storage aetlas:stack Score[-1]
