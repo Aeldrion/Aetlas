@@ -1,4 +1,11 @@
-# Executed at y=0, summons a chunk marker, notifies data packs who care and attempts structure generation
+#> aetlas:chunk_scan/summon_chunk_marker
+#
+# Summons a chunk marker, notifies data packs who care and attempts structure generation
+#
+# @within aetlas:chunk_scan/mark_chunk_as_player
+# @within aetlas:chunk_scan/summon_chunk_markers
+# @context a marker's position
+# @private
 
 summon minecraft:marker ~ ~ ~ {Tags: ["aetlas", "aetlas.chunk_marker", "aetlas.new"]}
 execute if block ~ ~ ~ minecraft:bedrock run setblock ~ ~ ~ minecraft:obsidian
