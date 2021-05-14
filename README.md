@@ -1,6 +1,6 @@
 # Aetlas
 
-Aetlas is a utility data pack for Minecraft 1.17 that provides a seed-specific structure generation framework based on storage data, and notification for newly generated chunks using a function tag.
+Aetlas is a work-in-progress utility data pack for Minecraft 1.17 that provides a seed-specific structure generation framework based on storage data, and notification for newly generated chunks using a function tag.
 
 ## How to use
 
@@ -10,15 +10,15 @@ To run commands at every newly generated chunk, add your function to the `#aetla
 
 ### Generating structures using the Aetlas generation framework
 
-Aetlas uses a storage NBT structure similar to loot tables, with structures being entries and additional parameters being functions. Every data pack that relies on Aetlas should add a single table to the global structure table list (`aetlas:input Tables`), with a unique `id` key corresponding to your data pack:
+Aetlas uses a storage NBT structure similar to loot tables, with structures being entries and additional parameters being functions. Every data pack that relies on Aetlas should add a single table to the global structure table list (`aetlas:input Tables`), with a unique `id` key corresponding to your data pack. This can be done in a `#minecraft:load` function which checks that the table is not already present:
 
 ```mcfunction
-execute unless data storage aetlas:input Tables[{id: "foo:bar"}] run data modify storage aetlas:input Tables append {id: "foo:bar", pools: [{roll: 1, entries: [{...}]}]}
+execute unless data storage aetlas:input Tables[{id: "foo:bar"}] run data modify storage aetlas:input Tables append {id: "foo:bar", pools: [{rolls: 1, entries: [{type: "aetlas:structure", name: "foo:house", conditions: [{condition: "minecraft:location_check", predicate: {biome: "minecraft:plains"}}], functions: [{function: "aetlas:set_height", heightmap: "SURFACE", height: 0}]}, {type: "aetlas:structure", name: "foo:dungeon", functions: [{function: "aetlas:set_height", height: {min: 28, max: 40}}]}]}]}
 ```
 
-IDs for entries, functions and predicates can be namespaced with `minecraft`, `aetlas` or with no namespace at all.
+Types of entries, functions, predicates and number providers can be namespaced with `minecraft`, `aetlas` or with no namespace at all. The official convention is using `aetlas` for entries and functions, `minecraft` for predicates and number providers.
 
-Additional structure tables can be defined in `aetlas:input References`, for referencing using `minecraft:structure_table` entries (see below).
+Additional structure tables can be defined in `aetlas:input References`, for referencing using `aetlas:structure_table` entries (see below).
 
 #### Entries
 
@@ -103,7 +103,7 @@ Additional functions can be used to modify structure parameters for `structure` 
 
 Pools, conditions and functions can have predicates like in loot tables. However, Aetlas recognises only a handful of predicates: `alternative`, `inverted`, `location_check`, `weather_check`, `time_check` and `random_chance`.
 
-* `location_check` only supports `biome`, `dimension`, `feature`, `light` and `position` sub-predicates. Additionally, `biome` does not support custom biomes.
+* `location_check` only supports `biome`, `dimension`, `feature`, `light` and `position` sub-predicates. Additionally, `biome` does not support custom biomes (however custom dimensions are supported). Dimension and biome IDs require namespace to be specified.
 
 * `random_chance` uses a PRNG that depends on the seed and the current position
 
