@@ -28,7 +28,8 @@ Allowed entries are `structure`, `group`, `alternatives`, `sequence` and `struct
 {
     "type": "minecraft:structure",
     "name": "foo:bar"
-}```
+}
+```
 
 ```json
 {
@@ -145,14 +146,16 @@ Number provider types supported by Aetlas are `constant`, `uniform` and `binomia
 "rolls": {
     "min": 0,
     "max": 2
-}```
+}
+```
 
 ```json
 "rolls": {
     "type": "minecraft:binomial",
     "n": 4,
     "p": 0.3
-}```
+}
+```
 
 ## Adding Aetlas to your own pack
 
