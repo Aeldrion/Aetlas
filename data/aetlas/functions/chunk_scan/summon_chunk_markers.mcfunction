@@ -37,4 +37,5 @@ scoreboard players set $chunk_loaded aetlas 1
 execute positioned ~ ~ ~-16 if block ~ ~ ~ #aetlas:default_base_layer run function aetlas:chunk_scan/summon_chunk_marker
 execute positioned ~ ~ ~-16 if block ~ ~ ~ #aetlas:marked_base_layer run tag @s add aetlas.chunk_marker.marked_north
 
+tag @s add aetlas.adjacent_chunks_all_marked_or_unloaded
 kill @s[tag=aetlas.chunk_marker.marked_east, tag=aetlas.chunk_marker.marked_south, tag=aetlas.chunk_marker.marked_west, tag=aetlas.chunk_marker.marked_north]
