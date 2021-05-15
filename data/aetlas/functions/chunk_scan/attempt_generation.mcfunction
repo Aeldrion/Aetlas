@@ -8,6 +8,6 @@
 
 function aetlas:math/seed
 
-data modify storage aetlas:stack Table append from storage aetlas:input StructureTable
-function aetlas:table/read_structure_table
-data remove storage aetlas:stack Table[-1]
+data modify storage aetlas:private Tables set from storage aetlas:input Tables
+execute store result score $tables aetlas run data get storage aetlas:private Tables
+execute if score $tables aetlas matches 1.. run function aetlas:table/read_structure_tables
