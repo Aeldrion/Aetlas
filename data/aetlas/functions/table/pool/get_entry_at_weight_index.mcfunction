@@ -4,11 +4,11 @@
 # $weight_sum must be set to 0 beforehand
 
 # Add to the sum
-data modify storage aetlas:stack Entry[-1] set from storage aetlas:stack Entries[-1][0]
+data modify storage aetlas:stack Entry[-1] set from storage aetlas:stack Entries[-1][-1]
 execute unless data storage aetlas:stack Entry[-1].weight run scoreboard players set $weight aetlas 1
 execute if data storage aetlas:stack Entry[-1].weight store result score $weight aetlas run data get storage aetlas:stack Entry[-1].weight
 scoreboard players operation $weight_sum aetlas += $weight aetlas
-data remove storage aetlas:stack Entries[-1][0]
+data remove storage aetlas:stack Entries[-1][-1]
 
 # Loop this function
 execute if score $weight_sum aetlas <= $weight_index aetlas run function aetlas:table/pool/get_entry_at_weight_index
